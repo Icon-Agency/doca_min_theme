@@ -23,11 +23,7 @@
     <meta name="viewport" content="width=device-width">
   <?php endif; ?>
   <meta http-equiv="cleartype" content="on">
-
   <?php print $styles; ?>
-  <!--[if IE]>
-    <link type="text/css" rel="stylesheet" href="/sites/all/themes/ministers/css/ie.css" media="all" />
-  <![endif]-->
   <?php print $scripts; ?>
   <?php if ($add_html5_shim and !$add_respond_js): ?>
     <!--[if lt IE 9]>
