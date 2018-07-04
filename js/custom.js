@@ -290,9 +290,9 @@ Drupal.behaviors.my_custom_behavior = {
         }
     }); 
     
-    // Detach last option 'Year' from dropdown
+    // Add 'All' option 'Year' to the List page Year dropdown
     if($('#edit-year-filter-value-year option:last-child').text() == '-Year') {
-        $('#edit-year-filter-value-year option:last-child').text('ALL');
+        $('#edit-year-filter-value-year option:last-child').text('All');
         $('#edit-year-filter-value-year option:last-child').insertBefore('#edit-year-filter-value-year option:first-child');
     }
 
