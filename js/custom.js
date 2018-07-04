@@ -291,7 +291,10 @@ Drupal.behaviors.my_custom_behavior = {
     }); 
     
     // Detach last option 'Year' from dropdown
-    $('#edit-year-filter-value-year option:last-child').detach();
+    if($('#edit-year-filter-value-year option:last-child').text() == '-Year') {
+        $('#edit-year-filter-value-year option:last-child').text('ALL');
+        $('#edit-year-filter-value-year option:last-child').insertBefore('#edit-year-filter-value-year option:first-child');
+    }
 
     // Build Palette Blocks
     $('.palette-div').each(function() {
