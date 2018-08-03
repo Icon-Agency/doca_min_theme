@@ -128,7 +128,7 @@ Drupal.behaviors.my_custom_behavior = {
     
     // If not already added, append 'ALL' filter option
     if(!$('.form-item-edit-channel-all').length) {
-        $('#edit-channel-wrapper .bef-checkboxes').prepend('<a id="edit-channel-all" href="#"><div class="form-item form-type-bef-checkbox form-item-edit-channel-all"><label class="option" for="edit-channel-all">All</label></div></a>');
+        $('#edit-channel-wrapper .bef-checkboxes').prepend('<a id="edit-channel-all" class="form-item form-type-bef-checkbox form-item-edit-channel-all" href="#"><label class="option" for="edit-channel-all">All</label></a>');
     }
     // When 'ALL' filter is selected reload page
     var setclick = 0;
