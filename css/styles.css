@@ -100,7 +100,7 @@ div.service-links img,
    
  /* Media content type */
 .node-type-media #content a,
-.node-type-media #content li {font-size: 100%; line-height: 170%;text-underline-position:under; display:inline-block;}
+.node-type-media #content li {font-size: 100%; line-height: 170%;text-underline-position:under;}
 .node-type-media #content p {font-size:100%; line-height: 170%; margin-bottom: 1.25em; text-rendering: optimizeLegibility; margin:10px 0;}
 .node-type-media #content h1 {margin-top: 0.2em; margin-bottom: 0.5em; font-size:36px; line-height:40px;}
 .node-type-media #content {margin-bottom:15px;}

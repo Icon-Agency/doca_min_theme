@@ -1,5 +1,5 @@
 (function ($, Drupal, window, document, undefined) {
-    
+
 // To understand behaviors, see https://drupal.org/node/756722#behaviors
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
@@ -128,13 +128,14 @@ Drupal.behaviors.my_custom_behavior = {
     
     // If not already added, append 'ALL' filter option
     if(!$('.form-item-edit-channel-all').length) {
-        $('#edit-channel-wrapper .bef-checkboxes').prepend('<div class="form-item form-type-bef-checkbox form-item-edit-channel-all"><input type="checkbox" name="channel[all]" id="edit-channel-all" value="all"><label class="option" for="edit-channel-all">All</label></div>');
+        $('#edit-channel-wrapper .bef-checkboxes').prepend('<a id="edit-channel-all" href="#"><div class="form-item form-type-bef-checkbox form-item-edit-channel-all"><label class="option" for="edit-channel-all">All</label></div></a>');
     }
-    // When 'ALL' filter is selected uncheck all filters to reset form
-    $('#edit-channel-all').change(function() {
-       $('.bef-checkboxes input').removeAttr('checked');
-       var pathname = window.location.pathname;
-       window.location.href = pathname;
+    // When 'ALL' filter is selected reload page
+    var setclick = 0;
+    $('#edit-channel-all').click(function(e) {
+        e.preventDefault();
+        var pathname = window.location.pathname;
+        window.location.href = pathname;
     });
     // Check to see if any filter checkboxes are selected, if not highlight 'All'
     if ($(".bef-checkboxes input:checkbox:checked").length > 0) {
@@ -169,9 +170,8 @@ Drupal.behaviors.my_custom_behavior = {
     
     // Turn active channel filter options back on
     $('.view-active-channels .active-channel').each(function() {
-      channel_id = $(this).text().replace(/\s/g,'');
-      $('#edit-channel-wrapper .bef-checkboxes '+channel_id).css('display','inline-block')
-
+        channel_id = $(this).text().trim();
+        $('#edit-channel-wrapper .bef-checkboxes '+channel_id).css('display','inline-block')
     });
     
     // Add social link to ministers tile footer
