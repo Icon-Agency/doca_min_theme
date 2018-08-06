@@ -210,6 +210,7 @@ Drupal.behaviors.my_custom_behavior = {
                     outlayer: msnry,
                     status: '.page-load-status',
                     animate: true,
+                    history: false,
                 }); 
             }
         });
