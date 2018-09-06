@@ -123,9 +123,11 @@ Drupal.behaviors.my_custom_behavior = {
     $('.views-field-field-image').each(function() {
         image_html = $(this).find('img').attr('src');
         image_alt = $(this).find('img').attr('alt');
+        if(typeof image_alt === 'undefined') {image_alt = ""};
         image_title = $(this).find('img').attr('title');
+        if(typeof image_title === 'undefined') {image_title = ""} else {image_title = ' title="'+image_title+'" '};
         if(image_html) {
-            $(this).parent().prepend('<img typeof="foaf:Image" alt="'+image_alt+'" title="'+image_title+'" src="'+image_html+'">');
+            $(this).parent().prepend('<img typeof="foaf:Image" alt="'+image_alt+'"'+image_title+'src="'+image_html+'">');
         }
         $(this).detach();
     });     
