@@ -1,0 +1,83 @@
+.view-minister-header-block {display:inline-block; position:relative;padding:0 5px;}
+.view-minister-header-block a {text-decoration:none;}
+.view-minister-header-block a:hover, .view-minister-header-block a:focus {text-decoration:underline;}
+.printable {display:none;position:absolute;}
+
+/* Modal popup */
+.modal-bg {display: none;position: fixed;height: 100%;width: 100%;background: #000;background: rgba(0, 0, 0, 0.55);z-index: 98;top: 0;left: 0;}
+.modal-content {display:none; position: absolute;top: 0%;left:0;width:100%;background: #fff;padding: 1em;z-index:100;border: solid 1px #666;-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);font-size: 1.2em;line-height: 1.6em;}
+.modal-content, .modal-content h2, .modal-content p {color:#000 !important;}
+.modal-content a {color:#2d5387 !important;}
+.modal-content p {margin:1em 0;}
+.modal-close {position:absolute; top:1.5em; right:1.5em; font-size:1em;font-weight:bold;text-decoration:none;}
+.modal-close:hover, .modal-close:focus {text-decoration:underline;}
+.views-field-field-minister-header-txt-colour-1, .views-field-field-palette-hex {display:none;}
+.print:before {font-family:Font Awesome\ 5 Free; content:"\f02f"; font-weight:bold; padding-right:5px;}
+
+/* Site Name and Minister Full Title & Name */
+.view-minister-header-block .view-header {width: 50% !important;float: left;padding-right: 5%;color: #404041 !important;}
+.view-minister-header-block .views-field-title div {line-height: 1.15em;margin: 0 0 .6em 0;padding: 0.5em 30% 0 0; font-size:2.6em;}
+.view-minister-header-block .views-field-title p {color:#444; padding-top: 0.5em;font-size: 1.8em;}
+
+/* Minister House, Name, Titles & Positions */
+.view-minister-header-block .view-content {width: 50%;float: right;position:relative;}
+.view-minister-header-block .views-field-nothing {width: 100%;position: absolute;left: 0;top: 0; padding:3%;}
+.view-minister-header-block .views-field-field-minister-photo img {width:100%;}
+.view-minister-header-block .views-field-field-minister-surname {padding:.9em 0 0 0;}
+.view-minister-header-block .views-field-field-minister-surname h2 {font-weight:bold;padding-bottom:0.5em; padding-top:6px;}
+.view-minister-header-block .views-field-field-minister-surname p,
+.view-minister-header-block .views-field-field-minister-surname h2 {margin:0;}
+.view-minister-header-block .views-field-field-minister-titles-positions {width:40%; line-height:0.6em;}
+.view-minister-header-block .views-field-field-minister-titles-positions .field-content {width:42%; line-height:1em;}
+.views-field-field-minister-titles-positions p {line-height:14px; margin:0.6em 0;}
+
+/* Facebook, Twitter, Instagram, Youtube, Biography, Contact */
+.view-minister-header-block .views-field-nothing-1 {width: 100%;position: absolute;left: 0;bottom:0;background-color: rgba(255,255,255,0.7);padding: 1em 1em 0.5em 1em;}
+.view-minister-header-block .views-field-nothing-1 > div {display: inline-block;}
+.view-minister-header-block .views-field-nothing-1 > div > a {color:#444;font-size: 0px;display: inline-block;padding: 0 7px;}
+.view-minister-header-block .views-field-nothing-1 > div > a:hover {color:black;}
+.view-minister-header-block .views-field-field-minister-facebook a:hover,.view-minister-header-block .views-field-field-minister-facebook a:focus,
+.view-minister-header-block .views-field-field-minister-twitter a:hover,.view-minister-header-block .views-field-field-minister-twitter a:focus,
+.view-minister-header-block .views-field-field-minister-instagram a:hover,.view-minister-header-block .views-field-field-minister-instagram a:focus,
+.view-minister-header-block .views-field-field-minister-youtube a:hover,.view-minister-header-block .views-field-field-minister-youtube a:focus {text-decoration:none !important;}
+
+.view-minister-header-block .views-field-field-minister-facebook a:before,
+.view-minister-header-block .views-field-field-minister-twitter a:before,
+.view-minister-header-block .views-field-field-minister-instagram a:before {font-size:16px;}
+.view-minister-header-block .views-field-field-minister-youtube a:before {font-size:17px;}
+.view-minister-header-block .views-field-field-minister-contact > a {font-size:14px !important;}
+.view-minister-header-block .views-field-body > a {font-size:14px !important;}
+
+@media (max-width: 980px) {
+     #block-views-minister-header-block-block {max-width:98%;}
+    .view-minister-header-block .view-header {width:45% !important;}
+    .view-minister-header-block .views-field-title div {padding:0.5em 10% 0 0; font-size:2.2em;}
+    .view-minister-header-block .views-field-title p {font-size:1.6em;}
+    .view-minister-header-block .view-content {width:55% !important;}  
+}
+
+@media (max-width: 768px) {
+    .modal-content {width:99%;left:0.5%;}
+     .view-minister-header-block .view-header {margin-top:10px;}
+    .view-minister-header-block .view-header,
+    .view-minister-header-block .view-content,
+    .view-minister-header-block .views-field {width:100% !important;}
+    .view-minister-header-block .views-field-title div {padding:0;}
+    .view-minister-header-block .minister-title div {margin:0 auto; text-align:center;}
+}
+
+@media (max-width: 468px) {
+    .view-minister-header-block .views-field-nothing-1 {position:relative;padding:0.5em;}
+    .view-minister-header-block .views-field-field-minister-titles-positions {width:60%;}
+    .view-minister-header-block .views-field-title div {font-size:2em;}
+    .view-minister-header-block .views-field-title p {padding-top:0;font-size:1.2em;}
+    .view-minister-header-block .views-field-nothing-1 > div > a {padding:0px 5px;}
+    .view-minister-header-block .views-field-field-minister-surname h2 {padding:0;}
+    .view-minister-header-block .views-field-field-minister-surname {padding:0;}
+}
+
+@media print {
+   .modal-content {border:none; box-shadow:none;display:block;width:100%;}
+   .modal-close, .print-link, .region-page-top, h1, .minister-title, #header, #block-views-minister-header-block-block .view-content, #filter, #block-block-1, #page, #contact, #biography, #footer {display:none !important;}
+   .printable {display:block;position:relative;}
+}

@@ -1,0 +1,59 @@
+.view-search-media .pageTitle {display:block;}
+.view-search-media {margin-top:1em; padding-top:1em;}
+.view-search-media h1 {width: 100%;font-size: 2em; margin-top:3px;}
+.search_results {font-size:1.1em; margin-bottom:20px;}
+.view-search-media .view-empty {min-height:100px;}
+
+.view-filters .views-exposed-widgets {margin:0;}
+.view-filters .views-exposed-form {overflow:hidden; max-height:43px;}
+.view-filters .views-exposed-form .views-exposed-widget {display:inline-block; padding:0;}
+.view-filters .views-widget {display:inline-block;}
+.view-filters .form-type-bef-checkbox {display:inline-block; margin:0; padding: 0px;}
+.view-filters .views-exposed-widgets > label {float: left; padding: 13px 5px 13px 10px; font-weight:bold;}
+.view-filters .views-exposed-widgets label {display:inline-block; margin:0; padding: 13px 7px 7px 7px;color: #666868;border-bottom: 5px solid transparent;}
+.view-filters .views-exposed-widgets input:hover+label {cursor:pointer; border-bottom: 5px solid #1a304e;}
+.view-filters .views-exposed-widgets input[type="checkbox"] {display:none; width:0; height:0;}
+#edit-year-filter-wrapper {margin-left:1em; padding:14px 0;}
+#edit-year-filter-wrapper label {margin:0; padding:0; border:none; vertical-align:top;}
+
+.view-filters  .views-row {background-color:#fff;}
+.view-filters .views-exposed-widgets label:before, .views-field-field-minister-first-name .icon:before {font-style: normal;font-weight: 900;text-decoration: inherit;color: #666868;font-size: 15px;padding-right: 0.5em;}
+.view-filters .views-exposed-widgets .highlight label {border-bottom: 5px solid #1a304e;}
+.highlight label {border-bottom: 5px solid #1a304e;}
+.form-item-edit-channel-all {margin-right: 3px !important;}
+
+/* View Row Styling */
+.view-search-media .views-row {
+    position: relative;
+    display:inline-block;
+    padding:0 0 1em 0 !important;
+    margin:0 0 1em 0 !important;
+    width: 100%;
+    word-wrap: break-word;
+    overflow: hidden;
+    border-bottom:1px solid #ccc;
+}
+.view-search-media .views-row a {color: #2c3c8a; text-decoration:none;}
+.view-search-media .views-row a:hover, .view-search-media .views-row a:focus {text-decoration:underline; text-underline-position:under; color:#5f5f5f;}
+
+/* Media Tiles */
+.views-field.views-field-field-image {float: right;width: 25%;}
+.view-search-media .views-field-title {font-weight:bold; display:inline-block;padding:0 0 1em 0; width:100%;}
+.view-search-media .views-field-title h3 {margin:0;font-weight:600;font-size: 1.3em;}
+.view-search-media .views-field-nothing-1 {display: inline-block; margin-bottom: 33px;background-color: #fff; width:100%;min-height:40px;}
+.view-search-media .views-field-field-minister-first-name {color:#74676a;font-size:0.9em;}
+.view-search-media .views-field-field-minister-first-name .icon:after {font-size: 0.9em; font-weight:bold;vertical-align:baseline;padding-left: 5px;}
+.view-search-media .views-field-field-social-link-1 {padding:1em 0 0 0;}
+
+@media only screen and (max-width: 768px) {
+   #filter {border:none;}
+   .view-filters .views-exposed-form {overflow:visible; max-height:none;}
+   .view-filters .views-exposed-widget, #filter .views-widget {width:100%;}
+   .view-filters .views-widget .form-type-bef-checkbox {width:49.4%;text-align:center; border:1px solid #999; margin: 2px 0;}
+   .view-filters .highlight label, .view-filters .views-widget .highlight label:before  {background-color:#1a304e; color:#fff;}
+   .view-filters .views-widget label {padding:14px 0 7px; width:100%;}
+    #edit-year-filter-wrapper {position: absolute; top: 0px; left: 45%;max-width:110px;}
+    #edit-year-filter-wrapper label {float:left;}
+    #edit-year-filter-wrapper .views-widget {float: left;width: auto;padding-top: 0px;} 
+   .view-search-media .views-row {width:99% !important;}
+}
