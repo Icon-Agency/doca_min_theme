@@ -1,8 +1,24 @@
 (function ($, Drupal, window, document, undefined) {
-
 // To understand behaviors, see https://drupal.org/node/756722#behaviors
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
+      
+    $(window).load(function() {
+        
+      // Check to see if any filters are selected and set a flag
+        var checkboxes = 0;
+        $('.form-type-bef-checkbox').each(function() {
+            if ($(this).children('input:checkbox:checked').length > 0) {
+               checkboxes = 1; 
+            }
+        });
+        
+        // If filter checkboxes checked on page load force an ajax update to filter results
+        if(checkboxes == 1) {
+            $('.loader').show();
+            $('#edit-submit-media-tiles').click();
+        }
+    })  
       
     // Get Ministers Header Colours
     $('.view-grid2 .grid-item.grid').each(function() {
@@ -12,6 +28,7 @@ Drupal.behaviors.my_custom_behavior = {
             header_border_color = $(this).find('.views-field-field-palette-hex').text();
             $(this).prepend('<div class="bt"></div>');
 
+            // Append colour styles to view header
             $('.view-grid2 .view-header style').append('.'+grid_pos+' {color: #'+header_text_color+'}');
             $('.view-grid2 .view-header style').append('.'+grid_pos+' h2 {color: #'+header_text_color+'}');
             $('.view-grid2 .view-header style').append('.'+grid_pos+' a {color: #'+header_text_color+'}');
@@ -105,8 +122,10 @@ Drupal.behaviors.my_custom_behavior = {
     // Detach media tile body image and place at top of tile
     $('.views-field-field-image').each(function() {
         image_html = $(this).find('img').attr('src');
+        image_alt = $(this).find('img').attr('alt');
+        image_title = $(this).find('img').attr('title');
         if(image_html) {
-            $(this).parent().prepend('<img src="'+image_html+'">');
+            $(this).parent().prepend('<img typeof="foaf:Image" alt="'+image_alt+'" title="'+image_title+'" src="'+image_html+'">');
         }
         $(this).detach();
     });     
@@ -114,8 +133,8 @@ Drupal.behaviors.my_custom_behavior = {
     // Detach and move loader to views-exposed-form
     if($('#filter .loader').length > 0) {
         $('#filter .loader').appendTo('.views-exposed-form');
-    }    
-    
+    }  
+
     // Detach and move filter to own area
     if($('.view-media-tiles .view-filters').length > 0 || $('.view-search-media .view-filters').length > 0) {
         $('#filter .view-filters').remove();
@@ -128,15 +147,29 @@ Drupal.behaviors.my_custom_behavior = {
     
     // If not already added, append 'ALL' filter option
     if(!$('.form-item-edit-channel-all').length) {
-        $('#edit-channel-wrapper .bef-checkboxes').prepend('<a id="edit-channel-all" class="form-item form-type-bef-checkbox form-item-edit-channel-all" href="#"><label class="option" for="edit-channel-all">All</label></a>');
+        $('#edit-channel-wrapper .bef-checkboxes').prepend('<a id="edit-channel-all" class="form-item form-type-bef-checkbox form-item-edit-channel-all"><label class="option" for="edit-channel-all">All</label></a>');
     }
     // When 'ALL' filter is selected reload page
     var setclick = 0;
     $('#edit-channel-all').click(function(e) {
         e.preventDefault();
-        var pathname = window.location.pathname;
-        window.location.href = pathname;
+        //var pathname = window.location.pathname + '?channel=all';
+        //window.location.href = pathname;
+        $('.loader').show();
+        $('.form-type-bef-checkbox').each(function() {
+            $(this).children('input:checkbox:checked').removeAttr('checked');
+        })
+        $('#edit-submit-media-tiles').click();
+        return false;
     });
+    
+    $('.bef-checkboxes input:checkbox').focus(function() {
+            $(this).parent().addClass('highlight-hf'); 
+    });
+    $('.bef-checkboxes input:checkbox').focusout(function() {
+            $(this).parent().removeClass('highlight-hf'); 
+    });
+    
     // Check to see if any filter checkboxes are selected, if not highlight 'All'
     if ($(".bef-checkboxes input:checkbox:checked").length > 0) {
         $('.form-item-edit-channel-all').removeClass('highlight');
@@ -188,7 +221,7 @@ Drupal.behaviors.my_custom_behavior = {
     
     // We have to repeat a bunch of calls when scrolling.
     $(document).ready(function() {
-
+        
         var $grid = $('.view-media-tiles.view-display-id-page_grid .view-content')
         $grid.imagesLoaded(function(){  
         
@@ -213,6 +246,7 @@ Drupal.behaviors.my_custom_behavior = {
                     history: false,
                 }); 
             }
+            
         });
 
         $grid.on('append.infiniteScroll', function( event, response, path, items ) {
@@ -257,7 +291,6 @@ Drupal.behaviors.my_custom_behavior = {
             });
          
             // Override Anchor behaviour
-
             $('.show-share').click(function(e){
                e.preventDefault();
               $(this).parents('.views-field-created').siblings('.views-field-nothing').show();
@@ -280,9 +313,9 @@ Drupal.behaviors.my_custom_behavior = {
             })
             
         });
-        
-    });
 
+    });
+    
     // LIST View page
     $('.views-row').each(function() {
         if(!$(this).children('.views-field-field-image').children('img').length) {
@@ -308,7 +341,7 @@ Drupal.behaviors.my_custom_behavior = {
         $('.view-header style').append('.view-media-tiles .'+palette_id+' .views-field-field-minister-first-name a {color: #'+palette_text+'}');
    })
    
-   //hiding back to top when at the top of the page
+   // Hide back to top when at the top of the page
    $(window).on("scroll", function() {
         var scrollPos = $(window).scrollTop();
         if (scrollPos <= 0) {
@@ -323,5 +356,6 @@ Drupal.behaviors.my_custom_behavior = {
   }
   
 };
+
 
 })(jQuery, Drupal, this, this.document);

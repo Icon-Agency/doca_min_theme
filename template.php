@@ -128,32 +128,7 @@ function ministers_preprocess_block(&$variables, $hook) {
 }
 // */
 
-function ministers_js_alter(&$javascript) {
-  //$replace_jquery = TRUE;
-
-  /*
-  $extra_admin_paths = array(
-    'path/one',
-    'path/two',
-    'path/n',
-  );
-
-  // do not apply to admin pages that may require lower version of jQuery provided by Drupal core
-  if (path_is_admin(current_path())) {
-    $replace_jquery = FALSE;
-  }   else {
-    foreach ($extra_admin_paths as $extra_admin_path) {
-      if (drupal_match_path(current_path(), $extra_admin_path)) {
-        $replace_jquery = FALSE;
-      }
-    }
-  }
-  */
-
-  //if ($replace_jquery) {
-    //$javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'ministers') . '/js/jquery-1.7.min.js';
- // }
-}
+function ministers_js_alter(&$javascript) {}
 
 function ministers_taxonomy_term_title($term) {
   if (!isset($term->tid) || !isset($term->name)) {

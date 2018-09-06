@@ -89,5 +89,6 @@
 
 
 </div>
-  <?php print render($page['footer']); ?>
+<a href="#skip-link-footer" id="skip-content-footer" class="element-invisible">Go to top of page</a>
+<?php print render($page['footer']); ?>
 <?php print render($page['bottom']); ?>
