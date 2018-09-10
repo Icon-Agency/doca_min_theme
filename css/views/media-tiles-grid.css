@@ -79,7 +79,7 @@ a#edit-channel-all:hover label {cursor:pointer;border-bottom: 7px solid #3f3f40;
 .view-media-tiles .views-field-nothing {display:none;position: absolute;bottom: 0px;right: 0px;background: #fff;width: 45%;text-align: right;padding:5px 5px 4px 0;border-top: 1px solid #cfd0d1;line-height:1em; font-size:0.85em;min-height:35px;}
 .view-media-tiles .views-field-nothing ul.links {float:right; margin: 0;}
 .view-media-tiles .views-field-nothing .links li {display: inline-block; padding: 6px 5px 5px 5px;}
-.hide-share {float:right; text-decoration: none; padding-left:4px;}
+.hide-share {float:right; text-decoration: none; padding-left:4px;font-size: 0pt;}
 .hide-share:after {font-family: Font Awesome\ 5 Free; content:"\f057";font-size:12px;padding-top: 7px;padding-left:2px;display: inline-block;vertical-align:text-bottom;font-weight:bold;}
 .view-media-tiles .views-field-nothing .links li a:hover img, .view-media-tiles .views-field-nothing .links li a:focus img {transform: scale(1.1);}
 
