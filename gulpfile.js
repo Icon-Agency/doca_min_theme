@@ -41,7 +41,7 @@ gulp.task('scripts', function() {
   //     }))
   //     .pipe(gulp.dest('./vendors/js/'));
 
-  return gulp.src('./src/js/*.js')
+  return gulp.src('./src/js/**/*.js')
       .pipe(plumber({
         errorHandler: onError
       }))
@@ -53,7 +53,7 @@ gulp.task('scripts', function() {
 
 // Modernizr
 gulp.task('modernizr', function() {
-  gulp.src('./src/js/*.js')
+  gulp.src('./src/js/**/*.js')
       .pipe(modernizr())
       .pipe(gulp.dest('./build/js/'))
 });
@@ -97,7 +97,7 @@ gulp.task('styles', function () {
   //     }))
   //     .pipe(gulp.dest('./css/'));
 
-  return gulp.src('src/sass/*.scss') // the source .scss file
+  return gulp.src('src/sass/**/*.scss') // the source .scss file
       .pipe(sass().on('error', sass.logError))
       .pipe(prefix({ browsers: prefixOptions, cascade: true })) // pass the file through autoprefixer
       .pipe(cleanCSS())
@@ -120,11 +120,11 @@ gulp.task('watch', ['images', 'scripts', 'modernizr', 'styles'], function() {
     gulp.start('images');
   });
   // Watch for JS changes.
-  gulp.watch('./src/js/*.js', function() {
+  gulp.watch('./src/js/**/*.js', function() {
     gulp.start('scripts');
   });
   // Watch for Sass changes.
-  gulp.watch('./src/sass/*.scss', function() {
+  gulp.watch('./src/sass/**/*.scss', function() {
     gulp.start('styles');
   });
 });

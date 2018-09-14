@@ -1,0 +1,1 @@
+!function(e){var i=document.title.substr(document.title.indexOf("| ")+1);i=i.substr(i.indexOf("| ")+1),e(".view-grid2 .grid-site-name").prepend("<div>"+i+"</div>")}(jQuery);

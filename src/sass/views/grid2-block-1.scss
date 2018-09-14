@@ -1,0 +1,186 @@
+
+#block-views-grid2-block-1, #block-views-grid2-block-2, #block-views-grid2-block-3, #block-views-grid2-block-4 {
+  color: #fff;
+}
+#block-views-grid2-block-feature-mobile {
+  display: none;
+}
+.view-grid2 {
+
+  .grid-item {
+    position: relative;
+    float: left;
+    display: inline-block;
+    width: 48.5%;
+    margin: 0.75%;
+  }
+  .grid-top {
+    width: 100%;
+  }
+  .grid-item .bt {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  .grid-site-name {
+    padding-right: 15%;
+    min-height: auto;
+    color: #404041;
+    div {
+      line-height: 1.15em;
+      margin: 0 0 .6em 0;
+      padding: 0.5em 0 0 0;
+      font-size: 2.6em;
+    }
+  }
+  .grid-ministers-text, .grid-feature-text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 3%;
+  }
+  .Feature .grid-ministers-text, .Minister .grid-feature-text {
+    display: none;
+  }
+
+  /* Minister House, Name, Titles & Positions */
+  .views-field-field-minister-photo img {
+    width: 100%;
+  }
+  .views-field-field-minister-surname {
+    width: 93%;
+    padding: 0.9em 0 0 0;
+    h2 {
+      font-weight: bold;
+      padding-bottom: 0.3em;
+      padding-top: 6px;
+    }
+    p, h2 {
+      margin: 0;
+    }
+  }
+  .views-field-field-minister-titles-positions {
+    width: 50%;
+    line-height: 1.4em;
+  }
+
+  .grid-ministers-text {
+    text-decoration: none;
+    &:hover h2, &:focus h2 {
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+  }
+
+  /* Feature */
+  .Feature {
+    color: #fff;
+  }
+  .views-field-title, .views-field-body {
+    display: none !important;
+  }
+  .views-field-field-feature-text {
+    font-size: 175%;
+    line-height: 1.1em;
+    position: absolute;
+    bottom: 50px;
+    width: 50%;
+  }
+  .views-field-link-to {
+    position: absolute;
+    bottom: 20px;
+    text-align: right;
+    a {
+      font-size: 1.4em;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 5px;
+      text-decoration: none;
+      &:hover {
+        background-color: #fff;
+        color: #1a304e !important;
+      }
+    }
+  }
+
+  .Feature .views-field-field-link-to a:focus {
+    background-color: #fff;
+    color: #1a304e !important;
+  }
+  .views-field-field-minister-header-txt-colour, .views-field-field-palette-hex {
+    display: none;
+  }
+
+  .views-field-field-minister-titles-positions p {
+  }
+
+  @media (max-width: 960px) {
+    .views-field-field-minister-titles-positions p {
+      margin: 0.7em 0;
+      line-height: 1.1em;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 797px) {
+    .view-media-tiles {
+      .views-field-field-minister-first-name, .views-field-created {
+        letter-spacing: -0.05em;
+        width: 50%;
+      }
+    }
+  }
+  @media (min-width: 785px) {
+    .grid-3 {
+      clear: both;
+    }
+  }
+  @media (max-width: 785px) {
+    .grid-item {
+      float: none;
+      clear: both;
+      width: 98%;
+    }
+    .grid-site-name {
+      padding: 0 0 0.5em 0;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .views-field-title {
+      font-size: 175%;
+      bottom: 120px;
+    }
+    .views-field-body {
+      font-size: 150%;
+      bottom: 90px;
+    }
+    .views-field-field-minister-titles-positions {
+      width: 60%;
+    }
+    .empty, .Feature {
+      display: none;
+    }
+  }
+  @media (max-width: 468px) {
+    .grid-site-name div {
+      margin: 0 auto;
+      font-size: 2.2em;
+      text-align: center;
+      max-width: 265px;
+    }
+  }
+  @media (max-width: 360px) {
+    .views-field-field-minister-surname h2 {
+      padding: 0;
+    }
+    .views-field-field-minister-titles-positions p {
+      margin: 0.5em 0;
+      line-height: 1em;
+    }
+  }
+}
+
