@@ -21,7 +21,6 @@ const modernizr = require('gulp-modernizr');
 const cleanCSS      = require('gulp-clean-css');
 const clean         = require('gulp-clean');
 const sass          = require('gulp-sass');
-const bulkSass = require('gulp-sass-bulk-import');
 
 // ********************************************************************************************************************************************
 
@@ -99,7 +98,6 @@ gulp.task('styles', function () {
   //     .pipe(gulp.dest('./css/'));
 
   return gulp.src('src/sass/*.scss') // the source .scss file
-      .pipe(bulkSass())
       .pipe(sass().on('error', sass.logError))
       .pipe(prefix({ browsers: prefixOptions, cascade: true })) // pass the file through autoprefixer
       .pipe(cleanCSS())

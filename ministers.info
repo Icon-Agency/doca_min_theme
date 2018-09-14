@@ -47,8 +47,8 @@ stylesheets[all][] = system.messages.css
 stylesheets[all][] = system.theme.css
 
 ; Then we add our own stylesheet.
-stylesheets[all][] = build/fonts/fa.css
-stylesheets[all][] = build/css/styles.css
+stylesheets[all][] = build/fonts/fontawesome/fa.css
+stylesheets[all][] = build/css/site.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
