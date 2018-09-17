@@ -8,7 +8,6 @@
 //@import '../../node_modules/jquery.mmenu/dist/jquery.mmenu.all.css';
 
 // Imports
-//
 @import 'mixins';
 @import 'base';
 @import 'colours';
@@ -18,6 +17,7 @@
 @import "views/media-tile-page-grid";
 @import "views/media-tile-page-list";
 @import "views/minister-header-block";
+@import "views/search-results";
 
 body{
   overflow-x: hidden;
