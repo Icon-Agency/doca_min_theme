@@ -19,7 +19,7 @@
           $('.loader').show();
           $('#edit-submit-media-tiles').click();
         }
-      })
+      });
 
       // Get Ministers Header Colours
       $('.view-grid2 .grid-item.grid').each(function () {
@@ -61,7 +61,7 @@
           //$('.view-media-tiles .Feature').detach();
 
         }
-      })
+      });
 
       // Move crest for tablet portrait and mobile devices.
       if ($(window).width() < 769) {
@@ -88,11 +88,11 @@
       //Override required form '(mandatory)' output.
       $('.form-required').each(function () {
         $(this).html('*');
-      })
+      });
       //Add aria-required to required form elements
       $('.form-required').each(function () {
         $(this).parent().siblings().attr('aria-required', 'true');
-      })
+      });
 
       // Grid/Palette description move to sit under label
       $('.field-name-field-grid-position .description').prependTo('#edit-field-grid-position-und');
@@ -182,7 +182,7 @@
         $('.loader').show();
         $('.form-type-bef-checkbox').each(function () {
           $(this).children('input:checkbox:checked').removeAttr('checked');
-        })
+        });
         $('#edit-submit-media-tiles').click();
         return false;
       });
@@ -249,7 +249,7 @@
       // We have to repeat a bunch of calls when scrolling.
       $(document).ready(function () {
 
-        var $grid = $('.view-media-tiles.view-display-id-page_grid .view-content')
+        var $grid = $('.view-media-tiles.view-display-id-page_grid .view-content');
         $grid.imagesLoaded(function () {
 
           // with Masonry & jQuery
@@ -304,17 +304,17 @@
             image_html = $(this).find('img').attr('src');
             image_alt = $(this).find('img').attr('alt');
             if (typeof image_alt === 'undefined') {
-              image_alt = ""
+              image_alt = "";
             }
-            ;
+
             image_title = $(this).find('img').attr('title');
             if (typeof image_title === 'undefined') {
-              image_title = ""
+              image_title = "";
             }
             else {
-              image_title = ' title="' + image_title + '" '
+              image_title = ' title="' + image_title + '" ';
             }
-            ;
+
             if (image_html) {
               $(this).parent().prepend('<img typeof="foaf:Image" alt="' + image_alt + '"' + image_title + 'src="' + image_html + '">');
             }
@@ -375,11 +375,16 @@
         palette_id = $(this).attr('id');
         palette_color = $(this).attr('data-palette');
         palette_text = $(this).attr('data-text');
-        // STYLE version
-        $('.view-header style').append('.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name {background-color: #' + palette_color + '}');
-        $('.view-header style').append('.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name {color: #' + palette_text + '}');
-        $('.view-header style').append('.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name a {color: #' + palette_text + '}');
-      })
+
+        $( '.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name').css({
+          'background-color': '#' + palette_color,
+          'color': '#' + palette_text
+        });
+
+        $('.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name a').css({
+          'color': '#' + palette_text
+        });
+      });
 
       // Hide back to top when at the top of the page
       $(window).on("scroll", function () {
