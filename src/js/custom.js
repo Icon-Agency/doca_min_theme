@@ -81,7 +81,7 @@
       // Jump to search results
       var page_url = window.location.href;
       if (page_url.indexOf('/search/media') > -1 && page_url.indexOf('#filter') == -1) {
-        page_url += '#filter'
+        page_url += '#filter';
         window.location.href = page_url;
       }
 
@@ -159,6 +159,15 @@
 
       // Move List/Tile icons to sit next to Filter options
       $('.list-tile').prependTo('#filter .view-filters');
+
+      $('#filter').append('<hr/>');
+
+      if ($('.view-media-tiles').length) {
+        $('#filter').prependTo('.view-media-tiles');
+      }
+      else {
+        $('#filter').prependTo('.view-search-media');
+      }
 
       // If not already added, append 'ALL' filter option
       if (!$('.form-item-edit-channel-all').length) {
