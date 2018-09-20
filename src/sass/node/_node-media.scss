@@ -21,9 +21,7 @@
             &>a{
               overflow: visible;
               &:after{
-                top: auto;
-                left: auto;
-                position: relative;
+                top: -1px;
               }
             }
           }
