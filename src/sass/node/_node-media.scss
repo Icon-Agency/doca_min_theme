@@ -1,0 +1,33 @@
+// Node type Media page style override
+.node{
+  &.node-media{
+    &.view-mode-full{
+      .date-bar-above-body{
+
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 170%;
+
+        .media-post-date-wrapper{
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .service-links{
+          position: relative;
+          right: auto;
+          float: right;
+          display: inline-block;
+        }
+
+        &:after{
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+

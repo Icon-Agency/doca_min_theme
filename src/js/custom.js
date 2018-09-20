@@ -350,10 +350,12 @@
               $(this).children('.views-field-field-minister-first-name').html($(this).children('.views-field-field-minister-first-name').text());
               $(this).children('.views-field-field-minister-first-name').wrapInner('<a href="' + social_channel_url + '" class="' + social_channel + '"></a>');
             })
-          })
+          });
 
+          build_palette_blocks();
         });
 
+        build_palette_blocks();
       });
 
       // LIST View page
@@ -370,22 +372,6 @@
         $('#edit-year-filter-value-year option:last-child').insertBefore('#edit-year-filter-value-year option:first-child');
       }
 
-      // Build Palette Blocks
-      $('.palette-div').each(function () {
-        palette_id = $(this).attr('id');
-        palette_color = $(this).attr('data-palette');
-        palette_text = $(this).attr('data-text');
-
-        $( '.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name').css({
-          'background-color': '#' + palette_color,
-          'color': '#' + palette_text
-        });
-
-        $('.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name a').css({
-          'color': '#' + palette_text
-        });
-      });
-
       // Hide back to top when at the top of the page
       $(window).on("scroll", function () {
         var scrollPos = $(window).scrollTop();
@@ -398,10 +384,25 @@
           $("#footer").fadeIn();
         }
       });
-
     }
-
   };
 
+  function build_palette_blocks(){
+    // Build Palette Blocks
+    $('.palette-div').each(function () {
+      palette_id = $(this).attr('id');
+      palette_color = $(this).attr('data-palette');
+      palette_text = $(this).attr('data-text');
+
+      $( '.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name').css({
+        'background-color': '#' + palette_color,
+        'color': '#' + palette_text
+      });
+
+      $('.view-media-tiles .' + palette_id + ' .views-field-field-minister-first-name a').css({
+        'color': '#' + palette_text
+      });
+    });
+  }
 
 })(jQuery, Drupal, this, this.document);
