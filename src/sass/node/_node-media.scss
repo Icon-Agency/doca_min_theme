@@ -6,7 +6,6 @@
 
         font-weight: 700;
         font-size: 15px;
-        line-height: 170%;
 
         .media-post-date-wrapper{
           display: inline-block;
@@ -17,6 +16,17 @@
           right: auto;
           float: right;
           display: inline-block;
+
+          li{
+            &>a{
+              overflow: visible;
+              &:after{
+                top: auto;
+                left: auto;
+                position: relative;
+              }
+            }
+          }
         }
 
         &:after{
