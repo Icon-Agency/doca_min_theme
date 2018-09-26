@@ -62,6 +62,10 @@ table {
     position: relative;
   }
 
+  margin-bottom: 6px;
+}
+
+.view-filters{
   & > hr {
     border: .5px #000 solid;
     margin: 1px 0 0 0;
@@ -71,8 +75,8 @@ table {
     left: -3000px;
     position: absolute;
   }
-  margin-bottom: 6px;
 }
+
 #page {
   background-color: transparent;
   box-shadow: none;

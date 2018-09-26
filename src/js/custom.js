@@ -160,8 +160,6 @@
       // Move List/Tile icons to sit next to Filter options
       $('.list-tile').prependTo('#filter .view-filters');
 
-      $('#filter').append('<hr/>');
-
       if ($('.view-media-tiles').length) {
         $('#filter').prependTo('.view-media-tiles');
       }
