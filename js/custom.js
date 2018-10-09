@@ -15,7 +15,7 @@ Drupal.behaviors.my_custom_behavior = {
         
         // If filter checkboxes checked on page load force an ajax update to filter results
         if(checkboxes == 1) {
-            $('.loader').show();
+            //$('.loader').show();
             $('#edit-submit-media-tiles').click();
         }
     })  
