@@ -14,7 +14,7 @@ Drupal.behaviors.my_custom_behavior = {
         });
         
         // If filter checkboxes checked on page load force an ajax update to filter results
-        if(checkboxes == 1) {
+        if(checkboxes == 1 && $('#edit-submit-media-tiles').length > 0) {
             $('.loader').show();
             $('#edit-submit-media-tiles').click();
         }
