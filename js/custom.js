@@ -123,7 +123,7 @@ Drupal.behaviors.my_custom_behavior = {
     $('.views-field-field-image').each(function() {
         image_html = $(this).find('img').attr('src');
         image_alt = $(this).find('img').attr('alt');
-        if(typeof image_alt === 'undefined') {image_alt = ""};
+        if(typeof image_alt === 'undefined') {image_alt = Drupal.settings.default_media_img_alt};
         image_title = $(this).find('img').attr('title');
         if(typeof image_title === 'undefined') {image_title = ""} else {image_title = ' title="'+image_title+'" '};
         if(image_html) {
@@ -279,7 +279,7 @@ Drupal.behaviors.my_custom_behavior = {
             $('.views-field-field-image').each(function() {
                 image_html = $(this).find('img').attr('src');
                 image_alt = $(this).find('img').attr('alt');
-                if(typeof image_alt === 'undefined') {image_alt = ""};
+                if(typeof image_alt === 'undefined') {image_alt = Drupal.settings.default_media_img_alt};
                 image_title = $(this).find('img').attr('title');
                 if(typeof image_title === 'undefined') {image_title = ""} else {image_title = ' title="'+image_title+'" '};
                 if(image_html) {

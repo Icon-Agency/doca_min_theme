@@ -60,3 +60,16 @@ function _ministers_preprocess_node__media__full(&$variables) {
     $variables['content']['body'][0]['#markup'] = preg_replace('/^<p>(<strong>)?\d+\s\w*\s\d\d\d\d(<\/strong>)?<\/p>/i', '', $variables['content']['body'][0]['#markup']);
   }
 }
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * @param $variables
+ *
+ * @see page.tpl.php
+ */
+function ministers_preprocess_page(&$variables) {
+
+  // Add pathToTheme to Drupal.settings in JS.
+  drupal_add_js('jQuery.extend(Drupal.settings, { "default_media_img_alt": "' . theme_get_setting('default_media_img_alt') . '" });', 'inline');
+}

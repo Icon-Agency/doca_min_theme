@@ -30,5 +30,20 @@ function ministers_form_system_theme_settings_alter(&$form, &$form_state, $form_
   unset($form['themedev']['zen_wireframes']);
   // */
 
+  $form['default_media_img_alt'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Default media tiles image alt text'),
+    '#description' => t(""),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['default_media_img_alt']['default_media_img_alt'] = array(
+    '#type' => 'textfield',
+    '#title' => t(''),
+    '#description' => t('The default alt text when image in media tiles do have an alt text. If not specified, no alt text will for media tile image without original alt text.'),
+    '#size' => 50,
+    '#maxlength' => 50,
+    '#default_value' => theme_get_setting('default_media_img_alt'),
+  );
   // We are editing the $form in place, so we don't need to return anything.
 }
