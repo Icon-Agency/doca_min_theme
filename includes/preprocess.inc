@@ -40,7 +40,7 @@ function _ministers_preprocess_node__media__full(&$variables) {
         '#markup' => '<div class="media-post-date-wrapper"><time datetime="'
                      . format_date($variables['created'], 'custom', 'c')  . '">'
                      . '<strong>'
-                     . format_date($variables['created'], 'custom', 'd M Y')
+                     . format_date($variables['created'], 'custom', 'd F Y')
                      . '</strong>'
                      . '</time></div>',
         '#weight' => '-999',
