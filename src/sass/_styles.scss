@@ -374,10 +374,14 @@ div.service-links img, .service-label {
   margin-bottom: 21px;
 }
 
-.header__logo-image {
-  max-height: 66px;
-  width: 92px;
-  min-width: 92px;
+.header__logo {
+  margin-left: 1rem;
+
+  .header__logo-image {
+    max-height: 66px;
+    width: 92px;
+    min-width: 92px;
+  }
 }
 
 .button {
