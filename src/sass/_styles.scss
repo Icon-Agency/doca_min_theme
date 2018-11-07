@@ -19,6 +19,39 @@ body {
     padding-top: 4px;
   }
 
+  .view-media-tiles.view-display-id-page_grid {
+
+    @media (min-width: 892px) {
+      .views-row {
+        margin: 1rem !important;
+        width: 30.5% !important;
+      }
+    }
+
+  }
+
+  .view-display-id-page_list.view-media-tiles {
+    margin-left: 1rem;
+  }
+
+  .view-grid2 .grid-item {
+    width: calc(50% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  #filter .view-filters {
+    padding-left: .25rem;
+    padding-right: .25rem;
+
+    .list-tile {
+      right: 4px;
+    }
+  }
+}
+
+body.page-minister-list .view-filters .views-exposed-form .views-exposed-widget {
+  padding-left: .25rem;
 }
 
 header {
@@ -98,7 +131,7 @@ table {
 #block-block-1 {
   clear: both;
   width: 100%;
-  max-width: 900px;
+  max-width: 894px;
   margin: 1em auto;
   padding-top: 2em;
   padding-bottom: 1em;
@@ -649,27 +682,36 @@ div.service-links img, .service-label {
   margin: 0 0 2px 0;
 }
 
-.view-media-tiles {
-  .views-field-nothing a:after, .views-field-created a:after {
-    display: inline-block;
-    text-decoration: none !important;
-  }
-  .views-field-field-minister-first-name a {
-    &:before, &:hover:before {
+body {
+  .view-media-tiles {
+    .views-field-nothing a:after, .views-field-created a:after {
       display: inline-block;
-      text-decoration: underline;
+      text-decoration: none !important;
     }
-  }
-  .views-field-created a {
-    &:after, &:hover:after {
-      display: inline-block;
-      text-decoration: underline;
+    .views-field-field-minister-first-name a {
+      &:before, &:hover:before {
+        display: inline-block;
+        text-decoration: underline;
+      }
     }
-  }
-  .views-field-nothing a {
-    &:after, &:hover:after {
-      display: inline-block;
-      text-decoration: underline;
+
+    .views-field-created {
+      padding: 11px 4px;
+
+      a {
+
+        &:after, &:hover:after {
+          display: inline-block;
+          text-decoration: underline;
+        }
+      }
+
+    }
+    .views-field-nothing a {
+      &:after, &:hover:after {
+        display: inline-block;
+        text-decoration: underline;
+      }
     }
   }
 }
